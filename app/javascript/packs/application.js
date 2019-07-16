@@ -16,6 +16,8 @@ require("@rails/actiontext")
 require("jquery")
 
 import './bootstrap_custom.js'
+// import 'paper-kit-2'
+
 import flatpickr from "flatpickr"
 require("flatpickr/dist/themes/material_green.css");
 
