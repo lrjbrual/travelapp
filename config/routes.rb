@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   root to: 'pages#index'
+
+  resources :pages
   get 'abouts/index'
   get 'promos/index'
   get 'promos/show'
