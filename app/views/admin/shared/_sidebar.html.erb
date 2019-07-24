@@ -1,0 +1,70 @@
+<div class="sidebar" data-color="white" data-active-color="danger">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="#" class="simple-text logo-mini">
+          <div class="logo-image-small">
+            <%# <img src="../assets/img/logo-small.png"> %>
+          </div>
+        </a>
+        <a href="" class="simple-text logo-normal">
+          Travel App
+          <!-- <div class="logo-image-big">
+            <img src="../assets/img/logo-big.png">
+          </div> -->
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class=" ">
+            <a href="#">
+              <i class="far fa-chart-bar"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="<%= 'active' if params[:controller] == 'admin/tours' %>">
+              <%= link_to admin_tours_path, class: "nav-link" do %>
+              <i class="fas fa-hiking"></i>
+              <p>Tours</p>
+            <% end %>
+          </li>
+          <li class="<%= 'active' if params[:controller] == 'admin/promos' %>">
+            <%= link_to admin_promos_path, class: "nav-link"  do %>
+              <i class="fab fa-buromobelexperte"></i>
+              <p>Promos</p>
+            <% end %>
+          </li>
+          <li class="<%= 'active' if params[:controller] == 'admin/categories' %>">
+            <%= link_to admin_categories_path, class: "nav-link"  do %>
+              <i class="fas fa-swatchbook"></i>
+              <p>Categories</p>
+            <% end %>
+          </li>
+          <li class="<%= 'active' if params[:controller] == 'admin/clients' %>">
+            <%= link_to admin_clients_path, class: "nav-link"  do %>
+              <i class="fas fa-user-tie"></i>
+              <p>Clients</p>
+            <% end %>
+          </li>
+          <li class="<%= 'active' if params[:controller] == 'admin/users' %>">
+            <%= link_to admin_users_path, class: "nav-link"  do %>
+              <i class="far fa-user-circle"></i>
+              <p>Users</p>
+            <% end %>
+          </li>
+          <li>
+            <a href="">
+              <i class="fas fa-money-check-alt"></i>
+              <p>Payment</p>
+            </a>
+          </li>
+          <li class="active-pro">
+            <a href="">
+              <i class="fas fa-info-circle"></i>
+              <p>About Us</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
