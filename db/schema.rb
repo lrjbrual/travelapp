@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_11_105059) do
+ActiveRecord::Schema.define(version: 2019_07_30_092114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,49 @@ ActiveRecord::Schema.define(version: 2019_07_11_105059) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "hotels", force: :cascade do |t|
+    t.string "Name"
+    t.string "location"
+    t.integer "star"
+    t.float "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "inclusions", force: :cascade do |t|
+    t.string "inclusion_title"
+    t.text "inclusion_description"
+    t.string "excluded_title"
+    t.text "excluded_description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "optionals", force: :cascade do |t|
+    t.string "tour_title"
+    t.integer "price"
+    t.string "note_price"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tours", force: :cascade do |t|
+    t.string "title"
+    t.string "location"
+    t.string "start_location"
+    t.date "duration_start"
+    t.date "duration_end"
+    t.text "itinerary"
+    t.float "price"
+    t.text "policy"
+    t.string "promo"
+    t.float "inventory"
+    t.boolean "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
